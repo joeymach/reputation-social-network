@@ -1,6 +1,11 @@
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import { urqlClient, getPublications, getProfiles } from '../../api'
+import Image from 'next/image'
+import one from './1.png'
+import two from './2.png'
+import three from './3.png'
+import foor from './4.png'
 
 export default function Profile() {
   const [profile, setProfile] = useState()
@@ -54,6 +59,20 @@ export default function Profile() {
               </div>
             ))
           }
+          <h3 style={postHeaderStyle}>Tags</h3>
+          <div>
+            <button class="button-8" role="button">Investment</button>
+            <button class="button-8" role="button">Technology</button>
+            <button class="button-8" role="button">DAO</button>
+          </div>
+          <br/>
+          <h3 style={postHeaderStyle}>Badges</h3>
+          <div>
+            <Image src={one} alt="" borderRadius={"50%"} />
+            <Image src={two} alt="" borderRadius={"50%"} />
+            <Image src={three} alt="" borderRadius={"50%"} />
+            <Image src={foor} alt="" borderRadius={"50%"} />
+          </div>
         </div>
       </div>
     </div>
