@@ -68,10 +68,10 @@ export default function Profile() {
           <br/>
           <h3 style={postHeaderStyle}>Badges</h3>
           <div>
-            <Image src={one} alt="" borderRadius={"50%"} />
-            <Image src={two} alt="" borderRadius={"50%"} />
-            <Image src={three} alt="" borderRadius={"50%"} />
-            <Image src={foor} alt="" borderRadius={"50%"} />
+            <Image src={one} alt="" height={100} width={100} className="badge" />
+            <Image src={two} alt="" height={100} width={100} className="badge" />
+            <Image src={three} alt="" height={100} width={100} className="badge" />
+            <Image src={foor} alt="" height={100} width={100} className="badge" />
           </div>
         </div>
       </div>
