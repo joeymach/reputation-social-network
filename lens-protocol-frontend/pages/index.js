@@ -123,6 +123,8 @@ export default function Home() {
                   <div>
                     <p style={latestPostStyle}>{profile.publication?.metadata.content}</p>
                   </div>
+                  <div id="upvote"></div><br/>
+                  <div id="downvote"></div>
                 </div>
               </a>
             </Link>
