@@ -51,8 +51,7 @@ enum StorageKey {
 
 #[near_bindgen]
 impl Contract {
-    /// Initializes the contract owned by `owner_id` with
-    /// default metadata (for example purposes only).
+    
     #[init]
     pub fn new_default_meta(owner_id: ValidAccountId) -> Self {
         Self::new(
@@ -85,14 +84,6 @@ impl Contract {
         }
     }
 
-    /// Mint a new token with ID=`token_id` belonging to `receiver_id`.
-    ///
-    /// Since this example implements metadata, it also requires per-token metadata to be provided
-    /// in this call. `self.tokens.mint` will also require it to be Some, since
-    /// `StorageKey::TokenMetadata` was provided at initialization.
-    ///
-    /// `self.tokens.mint` will enforce `predecessor_account_id` to equal the `owner_id` given in
-    /// initialization call to `new`.
     #[payable]
     pub fn nft_mint(
         &mut self,
