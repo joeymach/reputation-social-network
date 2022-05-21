@@ -67,16 +67,32 @@ export default function Profile() {
           </div>
           <br/>
           <h3 style={postHeaderStyle}>Badges</h3>
-          <div>
-            <Image src={one} alt="" height={100} width={100} className="badge" />
-            <Image src={two} alt="" height={100} width={100} className="badge" />
-            <Image src={three} alt="" height={100} width={100} className="badge" />
-            <Image src={foor} alt="" height={100} width={100} className="badge" />
+          <div style={badges}>
+            <div style={badgewrap}>
+              <Image src={one} alt="" height={100} width={100} className="badge" />
+            </div>
+            <div style={badgewrap}>
+              <Image src={two} alt="" height={100} width={100} className="badge" />
+            </div>
+            <div style={badgewrap}>
+              <Image src={three} alt="" height={100} width={100} className="badge" />
+            </div>
+            <div style={badgewrap}>
+              <Image src={foor} alt="" height={100} width={100} className="badge" />
+            </div>
           </div>
         </div>
       </div>
     </div>
   )
+}
+
+const badges = {
+  display : 'flex'
+}
+
+const badgewrap = {
+  marginRight: "10px"
 }
 
 const postHeaderStyle = {

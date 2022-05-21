@@ -17,7 +17,8 @@ a {
 }
 
 .badge {
-  border-radius: 70%;
+  border-radius: 50%;
+  display: inline-block;
 }
 
 .button-8 {
@@ -44,8 +45,7 @@ a {
   touch-action: manipulation;
   vertical-align: baseline;
   white-space: nowrap;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .button-8:hover,
