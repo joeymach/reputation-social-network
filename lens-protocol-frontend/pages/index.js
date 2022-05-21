@@ -40,7 +40,8 @@ export default function Home() {
   }
 
   async function connect() {
-    await window.ethereum.enable()
+    // await window.ethereum.enable()
+    // redirect to wallet page
     setConnected(true)
   }
 
@@ -88,11 +89,12 @@ export default function Home() {
         style={inputStyle}
       />
       <button style={buttonStyle} onClick={searchForProfile}>Search Lens</button>
-      {
-        !connected && (
-            <button style={buttonStyle} onClick={connect}>Connect Wallet</button>
-        )
-      }
+      
+      <Link style={buttonStyle} href={`/wallet`}>
+        <button style={buttonStyle}>
+          {!connected? "Connect Wallet":"Connected"}
+        </button>
+      </Link>
       <div style={listItemContainerStyle}>
         {
           profiles.map((profile, index) => (
