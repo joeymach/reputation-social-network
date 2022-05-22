@@ -49,14 +49,10 @@ router.get('/account', async (req: Request, res: Response) => {
 router.get('/tokens', async (req: Request, res: Response) => {
     // TODO: Get any tokens belonging to the profile's NEAR account.
     // const { KeyPair, keyStores } = require("near-api-js");
-  let reso = await axios.get('https://testnet-api.kitwallet.app/account/blu3hackteam-test.testnet/activity')
-  .catch(function (error) {
-    console.log(error);
-  });
-
-  let ress = reso
-  console.log(reso)
-  const aa = reso.map(a => )
+  let reso = await axios.get('https://testnet-api.kitwallet.app/account/blu3hackteam-test.testnet/activity');
+  console.log(reso.data)
+  let arr = reso.data.map((a:any) => ("token_metadata" in a.args.args_json)==false ? a.args.args_json.token_metadata : {})
+  console.log(arr)
 
   return res.status(200).json({});
 });
