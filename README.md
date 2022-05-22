@@ -1,3 +1,3 @@
-# reputation-social-network
+# Reputation Social Network
 
-[How it Works](_doc/how-it-works.md)
+![](_doc/reputation-social-network.jpg)

@@ -1,5 +1,7 @@
 #! /bin/bash
 
-if [[ $0 == "clean" ]]; then cargo clean; fi
+if [[ $1 == "clean" ]]; then cargo clean; fi
 
 cargo build --target wasm32-unknown-unknown --release
+
+echo -e "\nNEAR NFT contract build successful!"
