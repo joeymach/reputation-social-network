@@ -95,3 +95,21 @@ a {
   box-shadow: none;
   color: #2c5777;
 }
+
+.flex-container {
+  display: flex;
+  align-items: left;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin-right: 8px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.accomplished {
+  background-color: rgb(93, 216, 88);
+}

@@ -15,7 +15,7 @@ export default function Profile() {
 
   useEffect(() => {
     if (id) {
-      fetchProfile() 
+      fetchProfile()
     }
   }, [id])
   async function fetchProfile() {
@@ -49,6 +49,44 @@ export default function Profile() {
           }} src={profile.picture?.original?.url} />
           <h3 style={nameStyle}>{profile.name}</h3>
           <p style={handleStyle}>{profile.handle}</p>
+
+          <div className="flex-container">
+            <div>
+              <h3 style={{ color: 'grey', marginRight: '90px' }}>Topics</h3>
+              <p>Invest in Web3</p>
+              <p>NFT's</p>
+              <p>Women in Web3</p>
+              <p>Education</p>
+            </div>
+            <div>
+              <h3 style={{ color: 'grey' }}>Badges</h3>
+              <p>
+                <span class="dot accomplished"></span>
+                <span class="dot accomplished"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </p>
+              <p>
+                <span class="dot accomplished"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </p>
+              <p>
+                <span class="dot accomplished"></span>
+                <span class="dot accomplished"></span>
+                <span class="dot accomplished"></span>
+                <span class="dot"></span>
+              </p>
+              <p>
+                <span class="dot accomplished"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </p>
+            </div>
+
+          </div>
         </div>
         <div style={rightColumnStyle}>
           <h3 style={postHeaderStyle}>Posts</h3>
@@ -65,7 +103,7 @@ export default function Profile() {
             <button class="button-8" role="button">Technology</button>
             <button class="button-8" role="button">DAO</button>
           </div>
-          <br/>
+          <br />
           <h3 style={postHeaderStyle}>Badges</h3>
           <div style={badges}>
             <div style={badgewrap}>
@@ -88,7 +126,7 @@ export default function Profile() {
 }
 
 const badges = {
-  display : 'flex'
+  display: 'flex'
 }
 
 const badgewrap = {
@@ -99,12 +137,12 @@ const postHeaderStyle = {
   margin: '0px 0px 15px'
 }
 
-function generateRandomColor(){
+function generateRandomColor() {
   let maxVal = 0xFFFFFF; // 16777215
-  let randomNumber = Math.random() * maxVal; 
+  let randomNumber = Math.random() * maxVal;
   randomNumber = Math.floor(randomNumber);
   randomNumber = randomNumber.toString(16);
-  let randColor = randomNumber.padStart(6, 0);   
+  let randColor = randomNumber.padStart(6, 0);
   return `#${randColor.toUpperCase()}`
 }
 
