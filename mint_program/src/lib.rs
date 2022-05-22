@@ -36,7 +36,7 @@ pub struct Contract {
 }
 
 
-const DATA_IMAGE_SVG_NEAR_ICON: &str = "https://demo.storj-ipfs.com/ipfs/QmP1es2nZTWwYCnqZnXcXjp6ztMYNyPdieYSPsFNmqvgcC";
+const NOTORIETY_NFT_ICON: &str = "https://demo.storj-ipfs.com/ipfs/QmP1es2nZTWwYCnqZnXcXjp6ztMYNyPdieYSPsFNmqvgcC";
 
 
 #[derive(BorshSerialize, BorshStorageKey)]
@@ -58,9 +58,9 @@ impl Contract {
             owner_id,
             NFTContractMetadata {
                 spec: NFT_METADATA_SPEC.to_string(),
-                name: "Reputation Social Network NFT".to_string(),
-                symbol: "REPUSOCIAL".to_string(),
-                icon: Some(DATA_IMAGE_SVG_NEAR_ICON.to_string()),
+                name: "Notoriety NFT".to_string(),
+                symbol: "NOTORIETY".to_string(),
+                icon: Some(NOTORIETY_NFT_ICON.to_string()),
                 base_uri: None,
                 reference: None,
                 reference_hash: None,

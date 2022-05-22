@@ -6,7 +6,7 @@ import { intializeDB } from './db';
 
 
 const router: Express = express();
-intializeDB();
+// intializeDB();
 
 router.use(morgan('dev'));
 router.use(express.urlencoded({ extended: false }));
