@@ -101,12 +101,12 @@ export default function Home() {
             <img src={"https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_3.jpg"} style={profileImageStyle} />
             <div style={profileInfoStyle}>
               <h3 style={nameStyle}>jojooo</h3>
-              <p style={handleStyle}>@jojo</p>
+              <p style={handleStyle}>jojo.lens</p>
             </div>
           </div>
           <div>
-            <p style={latestPostStyle}>hey ya'll, here's the latest nft collection featuring female besties in web3!</p>
-            <img style={{maxWidth: '600px', maxHeight: '400px', margin: '30px 0px'}} src={"https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/02125908/untitled-design-46.png"} />
+            <p style={latestPostStyle}>hey y'all, here's the latest nft collection featuring female besties in web3!</p>
+            <img style={{maxWidth: '600px', maxHeight: '400px', margin: '20px 0px'}} src={"https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/02125908/untitled-design-46.png"} />
           </div>
           <div id="upvote"></div><br/>
           <div id="downvote"></div>
@@ -137,6 +137,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p style={latestPostStyle}>{profile.publication?.metadata.content}</p>
+                    <img style={{maxWidth: '600px', maxHeight: '400px', margin: '20px 0px'}} src={`https://source.unsplash.com/random/600x400?img=${Math.floor(Math.random() * (10000000 - 1) + 1)}`} />
                   </div>
                   <div id="upvote"></div><br/>
                   <div id="downvote"></div>
