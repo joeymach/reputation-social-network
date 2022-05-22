@@ -53,7 +53,7 @@ export default function Profile() {
           <div className="flex-container">
             <div>
               <h3 style={{ color: 'grey', marginRight: '90px' }}>Topics</h3>
-              <p>Invest in Web3</p>
+              <p>Investing</p>
               <p>NFT's</p>
               <p>Women in Web3</p>
               <p>Education</p>
@@ -68,9 +68,9 @@ export default function Profile() {
               </p>
               <p>
                 <span class="dot accomplished"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+                <span class="dot accomplished"></span>
+                <span class="dot accomplished"></span>
+                <span class="dot accomplished"></span>
               </p>
               <p>
                 <span class="dot accomplished"></span>
@@ -108,15 +108,19 @@ export default function Profile() {
           <div style={badges}>
             <div style={badgewrap}>
               <Image src={one} alt="" height={100} width={100} className="badge" />
+              <p style={{marginLeft: '5px'}}>education</p>
             </div>
             <div style={badgewrap}>
               <Image src={two} alt="" height={100} width={100} className="badge" />
+              <p style={{marginLeft: '15px'}}>Investing</p>
             </div>
             <div style={badgewrap}>
               <Image src={three} alt="" height={100} width={100} className="badge" />
+              <p>women in Web3</p>
             </div>
             <div style={badgewrap}>
               <Image src={foor} alt="" height={100} width={100} className="badge" />
+              <p style={{marginLeft: '30px'}}>NFT's</p>
             </div>
           </div>
         </div>
