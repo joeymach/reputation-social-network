@@ -25,7 +25,11 @@ const router = Router();
 
 router.get('/progress', async (req: Request, res: Response) => {
     // TODO: Get the profile's current progress.
-    return res.status(200).json({});
+    await client.connect();
+    const val = await client.get('votes');
+    const value = Number(val)
+    await client.quit();
+    return res.status(200).json({votes : value});
 });
 
 
@@ -58,15 +62,6 @@ router.get('/down-vote', async (req: Request, res: Response) => {
     const val = await client.get('votes');
     const value = Number(val)
     await client.set('votes', (value && value != 0 ? value - 1 : 0));
-    await client.quit();
-    return res.status(200).json({votes : value});
-});
-
-router.get('/votes', async (req: Request, res: Response) => {
-    // remove one vote from redis
-    await client.connect();
-    const val = await client.get('votes');
-    const value = Number(val)
     await client.quit();
     return res.status(200).json({votes : value});
 });
