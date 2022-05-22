@@ -8,12 +8,12 @@ import { createClient } from 'redis';
     docker run --name some-redis -d redis redis-server --save 60 1 --loglevel warning
 */
 
-var port = 8080;
+var port = 6379;
 var host = "127.0.0.1";
 var password = null;
 
-var redis = require("redis"),
-    client = redis.createClient(port, host);
+var redis = require("redis");
+var client = redis.createClient(port, host);
 
 // if there is a password do the auth
 if (password !== null){
@@ -26,10 +26,12 @@ const router = Router();
 router.get('/progress', async (req: Request, res: Response) => {
     // TODO: Get the profile's current progress.
     await client.connect();
-    const val = await client.get('votes');
-    const value = Number(val)
-    await client.quit();
-    return res.status(200).json({votes : value});
+    // const val = await client.get('votes');
+    // const value = Number(val)
+    // await client.quit();
+    // return res.status(200).json({votes : value});
+    return res.status(200).json({});
+
 });
 
 

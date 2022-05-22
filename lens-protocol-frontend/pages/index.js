@@ -80,6 +80,19 @@ export default function Home() {
   
   console.log('profiles:', profiles)
 
+  const inc = () => {
+    console.log("int")
+    fetch("http://localhost:8080/up-vote", {mode:'cors'})
+      .then(res => res.json)
+      .then(data => console.log(data))
+  }
+
+  const dec = () => {
+    console.log("dec")
+    fetch("http://localhost:8080/down-vote", {mode:'cors'})
+
+  }
+
   return (
     <div style={containerStyle}>
       <input
@@ -139,8 +152,8 @@ export default function Home() {
                     <p style={latestPostStyle}>{profile.publication?.metadata.content}</p>
                     <img style={{maxWidth: '600px', maxHeight: '400px', margin: '20px 0px'}} src={`https://source.unsplash.com/random/600x400?img=${Math.floor(Math.random() * (10000000 - 1) + 1)}`} />
                   </div>
-                  <div id="upvote"></div><br/>
-                  <div id="downvote"></div>
+                  <button onClick={inc}>up</button><br/>
+                  <button onClick={dec}>down</button>
                 </div>
               </a>
             </Link>
