@@ -103,7 +103,7 @@ export default function Home() {
                 <div style={listItemStyle}>
                   <div style={profileContainerStyle} >
                     {
-                      profile.picture ? (
+                      profile.picture && profile.picture && profile.picture.originals ? (
                       <img src={profile.picture.original.url} style={profileImageStyle} />
                       ) : (
                         <div
