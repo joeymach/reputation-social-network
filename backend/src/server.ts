@@ -8,6 +8,9 @@ import { intializeDB } from './db';
 const router: Express = express();
 // intializeDB();
 
+var cors = require('cors');
+router.use(cors())
+
 router.use(morgan('dev'));
 router.use(express.urlencoded({ extended: false }));
 router.use(express.json());

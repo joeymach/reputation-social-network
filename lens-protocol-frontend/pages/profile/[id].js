@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import { urqlClient, getPublications, getProfiles } from '../../api'
+import axios, { AxiosResponse } from 'axios';
 import Image from 'next/image'
 import one from './1.png'
 import two from './2.png'
@@ -10,6 +11,7 @@ import foor from './4.png'
 export default function Profile() {
   const [profile, setProfile] = useState()
   const [publications, setPublications] = useState([])
+  const [badges, setBadges] = useState([])
   const router = useRouter()
   const { id } = router.query
 
@@ -27,6 +29,8 @@ export default function Profile() {
     const pubs = await urqlClient.query(getPublications, { id, limit: 50 }).toPromise()
     console.log('pubs: ', pubs)
     setPublications(pubs.data.publications.items)
+    let reso = await axios.get('http://localhost:8080/tokens');
+    setBadges(reso.data)
   }
 
   if (!profile) return null
@@ -105,23 +109,13 @@ export default function Profile() {
           </div>
           <br />
           <h3 style={postHeaderStyle}>Badges</h3>
-          <div style={badges}>
-            <div style={badgewrap}>
-              <Image src={one} alt="" height={100} width={100} className="badge" />
-              <p style={{marginLeft: '5px'}}>education</p>
-            </div>
-            <div style={badgewrap}>
-              <Image src={two} alt="" height={100} width={100} className="badge" />
-              <p style={{marginLeft: '15px'}}>Investing</p>
-            </div>
-            <div style={badgewrap}>
-              <Image src={three} alt="" height={100} width={100} className="badge" />
-              <p>women in Web3</p>
-            </div>
-            <div style={badgewrap}>
-              <Image src={foor} alt="" height={100} width={100} className="badge" />
-              <p style={{marginLeft: '30px'}}>NFT's</p>
-            </div>
+          <div style={badgesstyle}>
+            {
+              badges.map((badge, index) => (<div key={index} style={badgewrap}>
+              <Image loader={() => badge.media} src={badge.media} alt="" height={100} width={100} className="badge" />
+              <p style={{marginLeft: '5px'}}>{badge.description}</p>
+            </div>))
+            }
           </div>
         </div>
       </div>
@@ -129,7 +123,7 @@ export default function Profile() {
   )
 }
 
-const badges = {
+const badgesstyle = {
   display: 'flex'
 }
 
