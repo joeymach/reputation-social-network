@@ -96,6 +96,21 @@ export default function Home() {
         </button>
       </Link>
       <div style={listItemContainerStyle}>
+        <div style={listItemStyle}>
+          <div style={profileContainerStyle} >
+            <img src={"https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_3.jpg"} style={profileImageStyle} />
+            <div style={profileInfoStyle}>
+              <h3 style={nameStyle}>jojooo</h3>
+              <p style={handleStyle}>@jojo</p>
+            </div>
+          </div>
+          <div>
+            <p style={latestPostStyle}>hey ya'll, here's the latest nft collection featuring female besties in web3!</p>
+            <img style={{maxWidth: '600px', maxHeight: '400px', margin: '30px 0px'}} src={"https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/02125908/untitled-design-46.png"} />
+          </div>
+          <div id="upvote"></div><br/>
+          <div id="downvote"></div>
+        </div>
         {
           profiles.map((profile, index) => (
             <Link href={`/profile/${profile.id}`} key={index}>
