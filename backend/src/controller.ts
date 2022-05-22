@@ -1,6 +1,6 @@
 import { Request, Response, Router } from 'express';
 import { getConnection } from "typeorm";
-import { mintNft } from './service';
+import { evaluateProgress } from './service';
 import { createClient } from 'redis';
 import * as nearAPI from "near-api-js";
 const fs = require("fs");
@@ -31,7 +31,7 @@ const router = Router();
 
 
 router.get('/progress', async (req: Request, res: Response) => {
-    // TODO: Get the profile's current progress.
+    // Get the profile's current progress.
     await client.connect();
     const val = await client.get('votes');
     const value = Number(val)
@@ -41,15 +41,15 @@ router.get('/progress', async (req: Request, res: Response) => {
 
 
 router.get('/account', async (req: Request, res: Response) => {
-    // TODO: Get the profile's associated NEAR account address.
+    // Get the profile's associated NEAR account address.
     return res.status(200).json({});
 });
 
 
 router.get('/tokens', async (req: Request, res: Response) => {
-    // TODO: Get any tokens belonging to the profile's NEAR account.
+    // Get any tokens belonging to the profile's NEAR account.
     // const { KeyPair, keyStores } = require("near-api-js");
-  let reso = await axios.get('https://testnet-api.kitwallet.app/account/blu3hackteam-test.testnet/activity');
+  let reso = await axios.get('https://testnet-api.kitwallet.app/account/blu3hackteam-demo.testnet/activity');
   let arr = reso.data.filter(function (entry:any) {
     return entry.action_kind === 'FUNCTION_CALL';
   });
@@ -71,6 +71,7 @@ router.get('/up-vote', async (req: Request, res: Response) => {
     const value = Number(val)
     await client.set('votes', (value ? value + 1 : 1));
     await client.quit();
+    evaluateProgress(value);
     return res.status(200).json({votes : value});
 });
 
@@ -82,6 +83,7 @@ router.get('/down-vote', async (req: Request, res: Response) => {
     const value = Number(val)
     await client.set('votes', (value && value != 0 ? value - 1 : 0));
     await client.quit();
+    evaluateProgress(value);
     return res.status(200).json({votes : value});
 });
 

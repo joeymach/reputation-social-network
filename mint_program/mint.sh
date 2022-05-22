@@ -1,6 +1,6 @@
 #! /bin/bash
 
-export NEAR_ID="blu3hackteam-test.testnet"
+export NEAR_ID="blu3hackteam-demo.testnet"
 
 export METADATA_RANK_0="https://demo.storj-ipfs.com/ipfs/QmP1es2nZTWwYCnqZnXcXjp6ztMYNyPdieYSPsFNmqvgcC"
 export METADATA_RANK_1="https://demo.storj-ipfs.com/ipfs/QmbjW9Jto1udVeMi2K7u8KM5xfcR36WCCPBrvuUNEXaLyP"

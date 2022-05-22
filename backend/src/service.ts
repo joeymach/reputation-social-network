@@ -1,4 +1,4 @@
-import { mintNearNft } from './near';
+// import { mintNearNft } from './near';
 
 
 export async function evaluateProgress(progress: number) {
@@ -15,12 +15,3 @@ export async function mintNft(rank: number) {
     const { execSync } = require('child_process');
     execSync(`bash ../../mint_program/mint.sh ${rank}`);
 }
-
-
-mintNft(3).then(
-    () => process.exit(),
-    err => {
-        console.error(err);
-        process.exit(-1);
-    },
-);

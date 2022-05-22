@@ -5,7 +5,7 @@ import {
 } from "near-api-js";
 
 
-const NEAR_ID = "blu3hackteam-test.testnet";
+const NEAR_ID = "blu3hackteam-demo.testnet";
 
 
 function getMetaData(rank: number) {
@@ -78,12 +78,3 @@ async function getAccountDetails() {
 
 //     console.log("Success.");
 // }
-
-
-getAccountDetails().then(
-    () => process.exit(),
-    err => {
-        console.error(err);
-        process.exit(-1);
-    },
-);
