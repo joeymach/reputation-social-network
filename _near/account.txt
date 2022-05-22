@@ -1,1 +1,3 @@
 blue3hackteam.testnet
+
+https://wallet.testnet.near.org/
